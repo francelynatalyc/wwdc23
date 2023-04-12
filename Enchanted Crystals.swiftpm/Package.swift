@@ -27,12 +27,11 @@ let package = Package(
                 .phone
             ],
             supportedInterfaceOrientations: [
-                .landscapeRight,
-                .landscapeLeft,
+                .portrait,
+                .portraitUpsideDown(.when (deviceFamilies: [.pad]))
             ]
         )
-    ],
-    targets: [
+    ],    targets: [
         .executableTarget(
             name: "AppModule",
             path: "."
