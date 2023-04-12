@@ -1,38 +1,41 @@
+import Foundation
 import SwiftUI
 
 struct MainScene: View {
     var body: some View {
         
-        NavigationView {
-            ZStack {
-                Image ("background")
-                    .resizable()
-                    .ignoresSafeArea()
+        ZStack {
+            Image ("background")
+                .resizable()
+                .ignoresSafeArea()
+            
+            VStack (spacing: 104){
+                Spacer()
+                Image ("title")
+                    .offset()
                 
-                VStack (spacing: 104){
-                    Spacer()
-                    Image ("title")
-                        .offset()
+                Spacer()
+                VStack (spacing: 24){
                     
-                    Spacer()
-                    VStack (spacing: 24){
+                    Button(action: {} ) {
                         NavigationLink(destination: FirstScene()){
                             Image ("start_button")
                         }
-                        
+                    }
+                    
+                    Button(action: {} ) {
                         NavigationLink(destination: AboutScene()){
                             Image ("about_button")
                         }
-                        
-                        Spacer()
-                        Image ("hands")
-                            .offset()
-                            .padding(.bottom, 12)
                     }
-
+                    
+                    Spacer()
+                    Image ("hands")
+                        .offset()
+                        .padding(.bottom, 12)
                 }
             }
-            
-        } .navigationViewStyle(.stack)
+        } .navigationBarHidden(true)
     }
+
 }

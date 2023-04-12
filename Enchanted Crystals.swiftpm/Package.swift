@@ -28,13 +28,17 @@ let package = Package(
             ],
             supportedInterfaceOrientations: [
                 .portrait,
-                .portraitUpsideDown(.when (deviceFamilies: [.pad]))
+                .portraitUpsideDown(.when(deviceFamilies: [.pad]))
             ]
         )
-    ],    targets: [
+    ],
+    targets: [
         .executableTarget(
             name: "AppModule",
-            path: "."
+            path: ".",
+            resources: [
+                .process("Resources")
+            ]
         )
     ]
 )
