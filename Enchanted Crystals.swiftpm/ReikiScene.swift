@@ -19,9 +19,14 @@ struct ReikiScene: View {
             VStack {
                 
                 HStack (alignment: .center) {
+                    
+                    Image ("sparkle_left")
+                    
                     Text ("Placing crystals")
                         .foregroundColor(Color("salmon"))
                         .font(getFont(size: 64)).bold()
+                    
+                    Image ("sparkle_right")
                     
                 }
                 .padding(.top, 32)

@@ -6,6 +6,7 @@ struct AboutScene: View {
     var body: some View {
         
         ZStack (alignment: .center) {
+            
             Image ("background")
                 .resizable()
                 .ignoresSafeArea()
@@ -13,9 +14,15 @@ struct AboutScene: View {
             VStack (spacing: 24){
                 
                 HStack (alignment: .center) {
+                    
+                    Image ("sparkle_left")
+                    
                     Text ("About")
                         .foregroundColor(Color("salmon"))
                         .font(getFont(size: 64)).bold()
+                    
+                    Image ("sparkle_right")
+
                     
                 }
                     .padding(.top, 32)
@@ -61,7 +68,7 @@ struct AboutScene: View {
                     )
 
             
-        }   .navigationBarHidden(false)
+        }   .navigationBarHidden(true)
 
     }
     

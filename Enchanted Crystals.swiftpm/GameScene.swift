@@ -28,60 +28,47 @@ class GameScene: SKScene {
         cornalina.name = "draggable"
         addChild(cornalina)
         
-        //config sodalite
+        //sodalite
         sodalite.name = "draggable"
         addChild(sodalite)
         
         
     }
     
-    lazy var aventurina: SKNode = {
-        let crystal = CrystalNode(crystalType: .aventurina)
-        crystal.position = CGPoint(x: -335, y: 36)
+    lazy var aventurina: CrystalNode = {
+        let crystal = CrystalNode(crystalType: .aventurina,
+                                  targetPosition: .init(x: 118, y: -47))
+        crystal.position = CGPoint(x: -336, y: 23)
+        crystal.initialPosition = crystal.position
         
         return crystal
     }()
     
-    lazy var citrino: SKNode = {
-        let crystal = CrystalNode(crystalType: .citrino)
-        crystal.position = CGPoint(x: -341, y: 185)
+    lazy var citrino: CrystalNode = {
+        let crystal = CrystalNode(crystalType: .citrino,
+                                  targetPosition: .init(x: 120, y: -222))
+        crystal.position = CGPoint(x: -336, y: 166)
+        crystal.initialPosition = crystal.position
         
         return crystal
     }()
     
-    lazy var cornalina: SKNode = {
-        let crystal = CrystalNode(crystalType: .cornalina)
-        crystal.position = CGPoint(x: -341, y: -111)
+    lazy var cornalina: CrystalNode = {
+        let crystal = CrystalNode(crystalType: .cornalina,
+                                  targetPosition: .init(x: 117, y: -382))
+        crystal.position = CGPoint(x: -336, y: -128)
+        crystal.initialPosition = crystal.position
         
         return crystal
     }()
     
-    lazy var sodalite: SKNode = {
-        let crystal = CrystalNode(crystalType: .sodalite)
-        crystal.position = CGPoint(x: -337, y: -258)
+    lazy var sodalite: CrystalNode = {
+        let crystal = CrystalNode(crystalType: .sodalite,
+                                  targetPosition: .init(x: 112, y: 157))
+        crystal.position = CGPoint(x: -336, y: -272)
+        crystal.initialPosition = crystal.position
         
         return crystal
     }()
-    
-    
-    
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let touch = touches.first, let node = self.currentNode {
-            let touchLocation = touch.location(in: self)
-            node.position = touchLocation
-            print(touchLocation)
-        }
-    }
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let touch = touches.first {
-            let location = touch.location(in: self)
-            let touchedNodes = self.nodes(at: location)
-            for node in touchedNodes.reversed() {
-                if node.name == "draggable" {
-                    self.currentNode = node
-                }
-            }
-        }
-    }
 }
 
