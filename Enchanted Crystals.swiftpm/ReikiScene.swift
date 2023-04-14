@@ -43,6 +43,8 @@ struct ReikiScene: View {
                     .frame(width: 954,height: 1000)
                     .ignoresSafeArea()
                 
+                Spacer()
+                
             }   .padding(.leading, 56)
                 .padding(.trailing, 56)
                 .frame(width: 961, height: 1302)

@@ -10,7 +10,6 @@ class CrystalNode: SKNode {
     var crystalImage : SKSpriteNode
     
     var initialPosition: CGPoint = .zero
-    
     public var targetPosition: CGPoint
     
     init(crystalType: crystalType, targetPosition: CGPoint) {
@@ -70,7 +69,7 @@ class CrystalNode: SKNode {
             self.position = targetPosition
             
         } else {
-            self.run(.move(to: initialPosition, duration: 1))
+            self.run(.move(to: initialPosition, duration: 0.3))
         }
     }
 }
