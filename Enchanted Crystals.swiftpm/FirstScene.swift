@@ -1,7 +1,6 @@
 import Foundation
 import SwiftUI
 
-
 struct FirstScene: View {
     
     var body: some View {

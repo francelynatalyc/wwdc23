@@ -8,19 +8,19 @@ import PackageDescription
 import AppleProductTypes
 
 let package = Package(
-    name: "Enchanted Crystals",
+    name: "Reiki Crystals",
     platforms: [
         .iOS("15.2")
     ],
     products: [
         .iOSApplication(
-            name: "Enchanted Crystals",
+            name: "Reiki Crystals",
             targets: ["AppModule"],
-            bundleIdentifier: "com.francely.Enchanted-Crystals",
+            bundleIdentifier: "com.francely.Reiki-Crystals",
             teamIdentifier: "T88FCKZA2R",
             displayVersion: "1.0",
             bundleVersion: "1",
-            appIcon: .placeholder(icon: .palette),
+            appIcon: .asset("AppIcon"),
             accentColor: .presetColor(.purple),
             supportedDeviceFamilies: [
                 .pad,

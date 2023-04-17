@@ -1,18 +1,26 @@
 import Foundation
 import SpriteKit
+import SwiftUI
 
 
 enum crystalType {
     case aventurina, citrino, cornalina, sodalite
 }
 
+var crystalPlaced : Int = 0
+
 class CrystalNode: SKNode {
+    
+    @ObservedObject var crystalData: CrystalData
+    
     var crystalImage : SKSpriteNode
     
     var initialPosition: CGPoint = .zero
     public var targetPosition: CGPoint
     
-    init(crystalType: crystalType, targetPosition: CGPoint) {
+    init(crystalType: crystalType, targetPosition: CGPoint, crystalData: CrystalData) {
+        
+        self.crystalData = crystalData
         
         switch crystalType {
         case .aventurina :
@@ -67,9 +75,18 @@ class CrystalNode: SKNode {
             self.position.y > (targetPosition.y - radius)) {
                         
             self.position = targetPosition
+            self.isUserInteractionEnabled = false
+            
+            crystalPlaced = crystalPlaced + 1
+            
+            if crystalPlaced == 4 {
+                crystalData.crystalPlaced = true
+            }
+            
             
         } else {
             self.run(.move(to: initialPosition, duration: 0.3))
+            
         }
     }
 }
