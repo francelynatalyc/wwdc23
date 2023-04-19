@@ -27,22 +27,22 @@ class CrystalNode: SKNode {
         switch crystalType {
         case .aventurina :
             self.crystalImage = .init(imageNamed: "aventurina")
-            self.crystalModalTexture = SKTexture(imageNamed: "modal_box")
+            self.crystalModalTexture = SKTexture(imageNamed: "modal_aventurina")
             
         case .citrino :
             self.crystalImage = .init(imageNamed: "citrino")
-            self.crystalModalTexture = SKTexture(imageNamed: "modal_box")
-
+            self.crystalModalTexture = SKTexture(imageNamed: "modal_citrino")
+            
             
         case.cornalina :
             self.crystalImage = .init(imageNamed: "cornalina")
-            self.crystalModalTexture = SKTexture(imageNamed: "modal_box")
-
+            self.crystalModalTexture = SKTexture(imageNamed: "modal_cornalina")
+            
             
         case .sodalite :
             self.crystalImage = .init(imageNamed: "sodalite")
-            self.crystalModalTexture = SKTexture(imageNamed: "modal_box")
-
+            self.crystalModalTexture = SKTexture(imageNamed: "modal_sodalite")
+            
             
         }
         
@@ -76,13 +76,18 @@ class CrystalNode: SKNode {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.run(.scale(to: 1.2, duration: 0.1))
-        if !(crystalModal?.isHidden)! {
-            crystalModal?.isHidden = true
-        } else {
+        
+        if (crystalModal?.isHidden)! {
+            if let current = parent?.children.first(where: { ($0 as? CrystalNode)?.crystalModal?.isHidden == false }) {
+                (current as? CrystalNode)?.crystalModal?.isHidden = true
+            }
             crystalModal?.isHidden = false
+            
+        } else {
+            crystalModal?.isHidden = true
         }
-
     }
+    
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.run(.scale(to: 1, duration: 0.1))
