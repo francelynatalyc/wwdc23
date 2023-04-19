@@ -5,6 +5,7 @@ import SwiftUI
 class GameScene: SKScene {
     
     var crystalData: CrystalData?
+    var particles: SKEmitterNode!
     
     let background = SKSpriteNode(imageNamed: "game")
     private var currentNode : SKNode?
@@ -28,6 +29,11 @@ class GameScene: SKScene {
         
         sodalite.name = "draggable"
         addChild(sodalite)
+        
+        particles = SKEmitterNode(fileNamed: "sparkles.sks")!
+        particles.position = CGPoint (x: 0.5, y: 0.5)
+        particles.targetNode = scene
+        addChild(particles)
         
     }
     

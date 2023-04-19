@@ -59,6 +59,15 @@ struct AboutScene: View {
                 
                 Spacer()
                 
+                
+                Button(action: {} ) {
+                    NavigationLink(destination: MainScene()){
+                        Image ("about_button")
+                    }
+                }
+                
+                Spacer()
+                
             }   .padding(.leading, 56)
                 .padding(.trailing, 56)
                 .frame(width: 961, height: 1302)

@@ -22,7 +22,6 @@ struct MainScene: View {
                             Image ("start_button")
                         }
                     }
-                    
                     Button(action: {} ) {
                         NavigationLink(destination: AboutScene()){
                             Image ("about_button")
@@ -30,6 +29,8 @@ struct MainScene: View {
                     }
                     
                     Spacer()
+                    
+
                     Image ("hands")
                         .offset()
                         .padding(.bottom, 12)
