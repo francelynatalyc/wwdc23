@@ -24,7 +24,6 @@ struct MainScene: View {
                     }
                     
                     Spacer()
-                    
 
                     Image ("hands")
                         .offset()

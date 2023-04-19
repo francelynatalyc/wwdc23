@@ -23,7 +23,6 @@ struct AboutScene: View {
                     
                     Image ("sparkle_right")
                     
-                    
                 }
                 .padding(.top, 32)
                 
@@ -52,7 +51,7 @@ struct AboutScene: View {
                     .multilineTextAlignment(.center)
                 
                 
-                Text ("Always looking to know the unknown!")
+                Text ("Always looking to know the unknown! 🤍")
                     .foregroundColor(Color("salmon"))
                     .font(getFont(size: 28)).bold()
                 
