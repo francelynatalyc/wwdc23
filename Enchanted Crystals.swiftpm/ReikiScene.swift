@@ -46,7 +46,7 @@ struct ReikiScene: View {
                     .padding(.top, 32)
                     
                     
-                    Text ("Understand a little about crystals and their benefits by clicking on them and dragging them to the chakra points located in the figure to the end, in order to be able to energize them.")
+                    Text ("Move the available crystals to the chakras located in the figure on the side to practice reiki therapy.")
                         .font(.system(size: 24, weight: .regular))
                         .foregroundColor(.white)
                         .multilineTextAlignment(.center)

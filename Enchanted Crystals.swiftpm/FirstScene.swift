@@ -12,8 +12,8 @@ struct FirstScene: View {
             
             HStack (alignment: .center) {
                 Button(action: {} ) {
-                    NavigationLink(destination: MainScene()){
-                        Image ("back_button")
+                    NavigationLink(destination: ReikiScene()){
+                        Image ("try_reiki_button")
                     }
                 }
                 Spacer ()

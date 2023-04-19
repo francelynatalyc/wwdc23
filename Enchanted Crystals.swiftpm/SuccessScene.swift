@@ -4,41 +4,49 @@ import SwiftUI
 struct SuccessScene: View {
     
     var body: some View {
+        
         ZStack {
             
             Image ("background")
                 .resizable()
                 .ignoresSafeArea()
             
-            HStack (alignment: .center) {
-                Button(action: {} ) {
-                    NavigationLink(destination: MainScene()){
-                        Image ("back_button")
-                    }
+            VStack {
+                
+                HStack (alignment: .center) {
+                    Image ("sparkle_left")
+                    
+                    Text ("You did it!")
+                        .foregroundColor(Color("salmon"))
+                        .font(getFont(size: 64)).bold()
+                    
+                    Image ("sparkle_right")
                 }
-                Spacer ()
+                .padding(.top, 32)
                 
-                Text ("You did it!")
-                    .foregroundColor(Color("salmon"))
-                    .font(getFont(size: 64))
                 
-                Spacer ()
-                
+                Text ("By moving the crystals to the chakra points correctly, you allow those points to draw energy from the crystals and assist with numerous treatments.")
+                    .font(.system(size: 24, weight: .regular))
+                    .foregroundColor(.white)
+                    .multilineTextAlignment(.center)
+                    .padding(.bottom, 32)
+                                
                 Button(action: {} ) {
                     NavigationLink(destination: AboutScene()){
                         Image ("about_button")
                     }
                 }
                 
-                
-            }   .padding(.leading, 56)
-                .padding(.trailing, 56)
+            }   .padding(.leading, 96)
+                .padding(.trailing, 96)
                 .frame(width: 961, height: 1302)
                 .background (Image ("box")
                     .resizable()
                     .ignoresSafeArea()
-                )
+                    )
+
         } .navigationBarHidden(true)
+        
     }
     
     func getFont(size: CGFloat) -> Font {

@@ -18,13 +18,8 @@ struct MainScene: View {
                 VStack (spacing: 24){
                     
                     Button(action: {} ) {
-                        NavigationLink(destination: ReikiScene()){
+                        NavigationLink(destination: FirstScene()){
                             Image ("start_button")
-                        }
-                    }
-                    Button(action: {} ) {
-                        NavigationLink(destination: AboutScene()){
-                            Image ("about_button")
                         }
                     }
                     
