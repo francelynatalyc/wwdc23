@@ -2,6 +2,9 @@ import Foundation
 import SwiftUI
 
 struct MainScene: View {
+    
+    @State private var isNavigationActive = false
+    
     var body: some View {
         
         ZStack {
@@ -30,7 +33,10 @@ struct MainScene: View {
                         .padding(.bottom, 12)
                 }
             }
-        } .navigationBarHidden(true)
+        }   .navigationBarHidden(true)
+            .onAppear(perform: {
+                SoundManager.shared.backgroundSound(sound: "mainsound", type: "mp3", vol: 0.5)
+                        })
     }
 
 }

@@ -54,7 +54,7 @@ class CrystalNode: SKNode {
         initialPosition = self.position
         
         crystalModal = SKSpriteNode(texture: crystalModalTexture, color: .clear, size: crystalModalTexture.size())
-        crystalModal?.position = CGPoint(x: 500, y: 0)
+        crystalModal?.position = CGPoint(x: 300, y: 0)
         crystalModal?.isHidden = true
         self.addChild(crystalModal!)
         
@@ -76,6 +76,9 @@ class CrystalNode: SKNode {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.run(.scale(to: 1.2, duration: 0.1))
+        
+        SoundManager.shared.playSound(sound: "takingsound", type: "mp3", vol: 1)
+        
         
         if (crystalModal?.isHidden)! {
             if let current = parent?.children.first(where: { ($0 as? CrystalNode)?.crystalModal?.isHidden == false }) {
@@ -104,6 +107,9 @@ class CrystalNode: SKNode {
             self.position.y > (targetPosition.y - radius)) {
             
             self.position = targetPosition
+            
+            SoundManager.shared.playSound(sound: "placesound", type: "mp3", vol: 1)
+
             self.isUserInteractionEnabled = false
             
             crystalPlaced = crystalPlaced + 1
@@ -115,6 +121,8 @@ class CrystalNode: SKNode {
             
         } else {
             self.run(.move(to: initialPosition, duration: 0.3))
+            SoundManager.shared.playSound(sound: "errorsound", type: "mp3", vol: 1)
+
             
         }
     }
