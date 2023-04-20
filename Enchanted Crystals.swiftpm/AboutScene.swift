@@ -33,7 +33,7 @@ struct AboutScene: View {
                     .multilineTextAlignment(.center)
                 
                 
-                Text ("Since I was a teenager I have always been very passionate about nature and all the magical and mysterious things it can provide us. It all started with a small book about the power of crystals and since then this passion has grown and today I love to talk and try to teach a little about the benefits that the use of crystals in Reiki can bring along with the treatments and needs that we may have during our small and incredible earthly life..")
+                Text ("Since I was a teenager I have always been very passionate about nature and all the magical and mysterious things it can provide us. It all started with a small book about the power of crystals and since then this passion has grown and today I love to talk and try to teach a little about the benefits that the use of crystals in Reiki can bring along with the treatments and needs that we may have during our small and incredible earthly life.")
                     .font(.system(size: 24, weight: .regular))
                     .foregroundColor(.white)
                     .multilineTextAlignment(.center)
